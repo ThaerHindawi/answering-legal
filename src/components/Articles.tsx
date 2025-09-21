@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Button } from "./common/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +12,7 @@ export default function Articles() {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const swiperRef = useRef<SwiperType | null>(null);
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const swiper = swiperRef.current;
@@ -180,7 +181,31 @@ export default function Articles() {
                         </h3>
                       </div>
                     </div>
-                    <p className="">{article.description}</p>
+                    {expanded[index] ? (
+                      <>
+                        <p>{article.description}</p>
+                        <button
+                          className="text-brand-primary font-semibold w-fit cursor-pointer"
+                          onClick={() =>
+                            setExpanded((prev) => ({ ...prev, [index]: false }))
+                          }
+                        >
+                          Read Less
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <p className="line-clamp-4">{article.description}</p>
+                        <button
+                          className="text-brand-primary font-semibold w-fit cursor-pointer"
+                          onClick={() =>
+                            setExpanded((prev) => ({ ...prev, [index]: true }))
+                          }
+                        >
+                          [Read More &gt;]
+                        </button>
+                      </>
+                    )}
                   </div>
                 </article>
               </SwiperSlide>

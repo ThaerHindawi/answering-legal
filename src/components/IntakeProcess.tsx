@@ -5,7 +5,7 @@ import Divider from "./common/Divider";
 export default function IntakeProcess() {
   return (
     <section className="py-8 lg:py-16">
-      <div className="max-w-1100 mx-auto px-8 lg:px-0">
+      <div className="max-w-1100 mx-auto px-8 lg:px-4 xl:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left content */}
           <div className="flex flex-col gap-8 order-2 lg:order-1">

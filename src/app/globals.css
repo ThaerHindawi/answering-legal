@@ -64,6 +64,7 @@
   --spacing-174: 174px;
   --spacing-300px: 300px;
   --spacing-340: 340px;
+  --spacing-353px: 353px;
   --spacing-370: 370px;
 
   /* screen width */
@@ -89,6 +90,9 @@
 
   --shadow-custom-1: 2.09px 2.09px 4.17px 0px rgba(0, 0, 0, 0.25);
   --shadow-custom-2: 0px 4px 4px 0px #00000040;
+
+  /* drop shadow for hero button mobile */
+  --shadow-custom-3: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   
   --leading-full: 100%;
   --leading-11: 110%;
@@ -97,7 +101,9 @@
   --leading-32: 32px;
 
   --breakpoint-xxs: 23rem;
+  --breakpoint-xms: 26.688rem;
   --breakpoint-xs: 30rem;
+  --breakpoint-xsmd: 42.5rem;
   --breakpoint-xmd: 56.25rem;
   ; 
 }

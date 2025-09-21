@@ -181,19 +181,25 @@ export default function Footer() {
       <div className="w-full max-w-1228 mx-auto lg:px-0">
         <div className="flex w-full justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-8 lg:gap-0">
           {footerLinks.map((section) => (
-            <div key={section.id} className="flex flex-col gap-5px w-[40%] xxs:w-[45%] sm:w-[30%] items-start lg:w-auto">
+            <div
+              key={section.id}
+              className="flex flex-col gap-5px w-[40%] xxs:w-[45%] sm:w-[30%] items-center lg:items-start lg:w-auto"
+            >
               <button
                 type="button"
-                className="text-base xxs:text-2xl font-semibold w-full flex items-center justify-between lg:justify-start cursor-pointer"
+                className="text-base xxs:text-2xl font-semibold w-full flex items-center justify-between
+                lg:justify-start cursor-pointer text-center lg:text-left"
                 onClick={() => toggleSection(section.id)}
                 aria-expanded={!!openSections[section.id]}
                 aria-controls={`footer-section-${section.id}`}
               >
-                <span>{section.title}</span>
+                <span className="w-full text-center lg:text-left">{section.title}</span>
               </button>
               <ul
                 id={`footer-section-${section.id}`}
-                className={`text-sm leading-245% ${openSections[section.id] ? "block" : "hidden"} lg:block`}
+                className={`text-sm leading-245% ${
+                  openSections[section.id] ? "block" : "hidden"
+                } lg:block text-center lg:text-left`}
               >
                 {section.links.map((link) => (
                   <li key={link.href}>

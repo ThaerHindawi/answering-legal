@@ -51,7 +51,7 @@ export default function Services() {
     <section className="relative lg:max-w-1376 mx-auto lg:h-340 px-4 py-16 xl:py-0 xl:px-0">
       <div className="flex flex-col gap-8 relative lg:absolute lg:top-0 lg:left-0 lg:right-0 lg:bottom-0 lg:-translate-y-174">
         {/* Section header */}
-        <div className="flex flex-col items-center gap-6 mx-4 lg:mx-20">
+        <div className="flex flex-col items-center gap-6 mx-4 xl:mx-20">
           <h2 className="text-32 text-center lg:text-start font-bold text-brand-black lg:text-neutral-white">
             Here’s what we can do for your law firm
           </h2>
@@ -59,7 +59,7 @@ export default function Services() {
         </div>
 
         {/* Services grid */}
-        <div className="max-w-1120 mx-5.5 lg:mx-32 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="max-w-1120 mx-5.5 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 gap-8">
           {serviceItems.map((item) => {
             const { firstLine, secondLine } = splitTitleIntoTwoLines(
               item.title
