@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
-import { Button } from "./common/Button";
+import { Button } from "@/components/common/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y } from "swiper/modules";
 import "swiper/css";
@@ -70,15 +70,15 @@ export default function Articles() {
 
   return (
     <section className="py-16">
-      <div className="max-w-1248 mx-auto flex flex-col gap-8 lg:gap-32-5px items-center relative">
+      <div className="max-w-1248px mx-auto flex flex-col gap-8 lg:gap-32-5px items-center relative">
         {/* Section header */}
         <div className="text-center px-4 md:px-0">
-          <h2 className="text-32 font-bold text-brand-dark leading-none">
+          <h2 className="text-32px font-bold text-brand-dark leading-none">
             Want to learn more? Read our articles on legal intake.
           </h2>
         </div>
 
-        <div className="relative gap-16 lg:absolute lg:inset-0 flex justify-between items-center pointer-events-none">
+        <div className="relative gap-16 lg:absolute lg:inset-0 flex justify-between items-center pointer-events-none px-0 lg:px-4 xl:px-0">
           <button
             ref={prevRef}
             aria-label="Previous slide"
@@ -155,11 +155,11 @@ export default function Articles() {
           >
             {articles.map((article, index) => (
               <SwiperSlide key={index}>
-                <article className="relative bg-white rounded-20 shadow-custom-1 px-4 pt-4 pb-23px flex flex-col gap-4 mx-3 mb-8 lg:mb-32-5px">
+                <article className="relative bg-white rounded-20px shadow-custom-1 px-4 pt-4 pb-23px flex flex-col gap-4 mx-3 mb-8 lg:mb-32-5px">
                   <div className="aspect-video relative items-center justify-center">
                     <div className="w-full h-full">
                       <Image
-                        className="rounded-20"
+                        className="rounded-20px"
                         src={article.image}
                         alt={article.title}
                         fill

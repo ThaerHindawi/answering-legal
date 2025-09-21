@@ -30,63 +30,61 @@
   --spacing-5px: 5px;
   --spacing-7px: 7px;
   --spacing-13px: 13px;
-  --spacing-14: 14px;
   --spacing-15px: 15px;
-  --spacing-17.5: 17.5px;
+  --spacing-17-5px: 17.5px;
   --spacing-23px: 23px;
   --spacing-27px: 27px;
   --spacing-32-5px: 32.5px;
-  --spacing-44: 44px;
   --spacing-45px: 45px;
-  --spacing-47: 47px;
+  --spacing-47px: 47px;
   --spacing-49px: 49px;
   --spacing-51px: 51px;
-  --spacing-52: 52px;
+  --spacing-52px: 52px;
 
   /* Header height */
-  --spacing-133: 133px;
+  --spacing-133px: 133px;
 
 
   /* Hero height */
-  --spacing-750: 750px;
-  --spacing-650: 650px;
-  --spacing-400: 400px;
+  --spacing-750px: 750px;
+  --spacing-650px: 650px;
+  --spacing-400px: 400px;
   --spacing-456px: 456px;
-  --spacing-46: 46px;
+  --spacing-46px: 46px;
   --spacing-69px: 69px;
   --spacing-72px: 72px;
-  --spacing-93: 93px;
-  --spacing-92: 92px;
-  --spacing-100: 100px;
+  --spacing-92px: 92px;
+  --spacing-93px: 93px;
+  --spacing-100px: 100px;
   --spacing-106px: 106px;
   --spacing-153px: 153px;
   --spacing-193px: 193px;
-  --spacing-174: 174px;
+  --spacing-174px: 174px;
   --spacing-300px: 300px;
-  --spacing-340: 340px;
+  --spacing-340px: 340px;
   --spacing-353px: 353px;
-  --spacing-370: 370px;
+  --spacing-370px: 370px;
 
   /* screen width */
-  --spacing-1100: 1100px;
-  --spacing-1120: 1120px;
-  --spacing-1216: 1216px;
-  --spacing-1248: 1248px;
-  --spacing-1228: 1228px;
-  --spacing-1376: 1376px;
-  --spacing-1440: 1440px;
+  --spacing-1100px: 1100px;
+  --spacing-1120px: 1120px;
+  --spacing-1216px: 1216px;
+  --spacing-1248px: 1248px;
+  --spacing-1228px: 1228px;
+  --spacing-1376px: 1376px;
+  --spacing-1440px: 1440px;
 
   --text-12px: 12px;
-  --text-22: 22px;
-  --text-32: 32px;
+  --text-22px: 22px;
+  --text-32px: 32px;
 
-  --radius-5: 5px;
-  --radius-8: 8px;
-  --radius-10: 10px;
-  --radius-11: 11px;
-  --radius-12: 12px;
+  --radius-5px: 5px;
+  --radius-8px: 8px;
+  --radius-10px: 10px;
+  --radius-11px: 11px;
+  --radius-12px: 12px;
   --radius-15px: 15px;
-  --radius-20: 20px;
+  --radius-20px: 20px;
 
   --shadow-custom-1: 2.09px 2.09px 4.17px 0px rgba(0, 0, 0, 0.25);
   --shadow-custom-2: 0px 4px 4px 0px #00000040;
@@ -95,12 +93,12 @@
   --shadow-custom-3: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   
   --leading-full: 100%;
-  --leading-11: 110%;
-  --leading-12: 120%;
+  --leading-120%: 120%;
   --leading-245%: 245%;
-  --leading-32: 32px;
+  --leading-32px: 32px;
 
   --breakpoint-xxs: 23rem;
+  --breakpoint-xxms: 25rem;
   --breakpoint-xms: 26.688rem;
   --breakpoint-xs: 30rem;
   --breakpoint-xsmd: 42.5rem;

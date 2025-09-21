@@ -12,11 +12,11 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-neutral-bg h-16 lg:h-133 flex items-center">
-      <div className="flex flex-col gap-4 max-w-1440 mx-auto px-4 py-2 lg:px-8 lg:pt-8 lg:pb-6 w-full">
+    <header className="sticky top-0 z-50 bg-neutral-bg h-16 lg:h-133px flex items-center">
+      <div className="flex flex-col gap-4 max-w-1440px mx-auto px-4 py-2 lg:px-8 lg:pt-8 lg:pb-6 w-full">
         {/* Top section */}
         <Top />
-        <nav className="flex justify-between items-center h-47">
+        <nav className="flex justify-between items-center h-47px">
           {/* Logo */}
           <Logo />
           {/* Navigation */}

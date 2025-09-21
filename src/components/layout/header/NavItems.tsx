@@ -81,7 +81,7 @@ export default function NavItems({ navItems }: NavItemsProps) {
               </Link>
             )}
             <div
-              className={`h-1 shrink-0 bg-accent-cyan rounded-8 w-full transform origin-center transition-transform duration-300 ${
+              className={`h-1 shrink-0 bg-accent-cyan rounded-8px w-full transform origin-center transition-transform duration-300 ${
                 isActive ? "scale-x-100" : "scale-x-0"
               }`}
             ></div>

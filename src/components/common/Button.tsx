@@ -3,11 +3,11 @@ import * as React from "react";
 import { cva, cx, type VariantProps } from "class-variance-authority";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-12",
+  "inline-flex items-center justify-center font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-12px",
   {
     variants: {
       variant: {
-        primary: "bg-brand-primary hover:bg-brand-dark text-neutral-white rounded-12 font-semibold leading-none h-52",
+        primary: "bg-brand-primary hover:bg-brand-dark cursor-pointer text-neutral-white rounded-12px font-semibold leading-none h-52px",
         secondary:
           "bg-transparent border border-neutral-black text-neutral-black hover:bg-neutral-black hover:text-neutral-white",
         outline:
@@ -17,8 +17,8 @@ const buttonVariants = cva(
       },
       size: {
         sm: "px-3 py-2 text-sm",
-        md: "px-6 py-17.5 text-xl",
-        lg: "px-6 py-17.5 text-2xl",
+        md: "px-6 py-17-5px text-xl",
+        lg: "px-6 py-17-5px text-2xl",
       },
       fullWidth: {
         true: "w-full",

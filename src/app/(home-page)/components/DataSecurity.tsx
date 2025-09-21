@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Divider from "./common/Divider";
-import { Button } from "./common/Button";
+import Divider from "@/components/common/Divider";
+import { Button } from "@/components/common/Button";
 
 export default function DataSecurity() {
   return (
     <section className="py-8 lg:py-16">
-      <div className="max-w-1100 mx-auto px-4 xl:px-0">
+      <div className="max-w-1100px mx-auto px-4 xl:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-center">
           {/* Left content - Image */}
           <div className="relative w-full h-full">
@@ -20,11 +20,11 @@ export default function DataSecurity() {
 
           {/* Right content */}
           <div className="flex flex-col gap-6">
-            <h2 className="text-32 font-bold leading-none">
+            <h2 className="text-32px font-bold leading-none">
               Your data’s in good hands
             </h2>
-            <Divider className="rounded-8" />
-            <p className="text-xl leading-32">
+            <Divider className="rounded-8px" />
+            <p className="text-xl leading-32px">
               Our partnership with your CRM enables a seamless flow of
               information.
             </p>

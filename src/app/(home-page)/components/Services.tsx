@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Divider from "./common/Divider";
+import Divider from "@/components/common/Divider";
 
 type ServiceItem = {
   id: string;
@@ -48,18 +48,18 @@ const serviceItems: ServiceItem[] = [
 
 export default function Services() {
   return (
-    <section className="relative lg:max-w-1376 mx-auto lg:h-340 px-4 py-16 xl:py-0 xl:px-0">
-      <div className="flex flex-col gap-8 relative lg:absolute lg:top-0 lg:left-0 lg:right-0 lg:bottom-0 lg:-translate-y-174">
+    <section className="relative lg:max-w-1376px mx-auto lg:h-340px xxms:px-4 py-16 xl:py-0 xl:px-0">
+      <div className="flex flex-col gap-8 relative lg:absolute lg:top-0 lg:left-0 lg:right-0 lg:bottom-0 lg:-translate-y-174px">
         {/* Section header */}
         <div className="flex flex-col items-center gap-6 mx-4 xl:mx-20">
-          <h2 className="text-32 text-center lg:text-start font-bold text-brand-black lg:text-neutral-white">
+          <h2 className="text-32px text-center lg:text-start font-bold text-brand-black lg:text-neutral-white">
             Here’s what we can do for your law firm
           </h2>
-          <Divider className="w-1216 max-w-1216" />
+          <Divider className="w-1216px max-w-1216px" />
         </div>
 
         {/* Services grid */}
-        <div className="max-w-1120 mx-5.5 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="max-w-1120px mx-5.5 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 gap-8">
           {serviceItems.map((item) => {
             const { firstLine, secondLine } = splitTitleIntoTwoLines(
               item.title
@@ -67,9 +67,9 @@ export default function Services() {
             return (
               <div
                 key={item.id}
-                className="bg-white px-4 py-8 rounded-20 shadow-custom-1 h-370 text-center flex flex-col gap-6 items-center"
+                className="bg-white px-4 py-8 rounded-20px shadow-custom-1 h-370px text-center flex flex-col gap-6 items-center"
               >
-                <div className="w-100 h-100">
+                <div className="w-100px h-100px">
                   <Image
                     src={item.iconSrc}
                     alt={item.iconAlt}
@@ -78,13 +78,13 @@ export default function Services() {
                   />
                 </div>
 
-                <h2 className="text-32 font-bold leading-full">
+                <h2 className="text-32px font-bold leading-full">
                   <span className="block">{firstLine}</span>
                   <span className="block">{secondLine || "\u00A0"}</span>
                 </h2>
 
                 <div className="w-full">
-                  <Divider className="rounded-5" />
+                  <Divider className="rounded-5px" />
                 </div>
 
                 <p className="text-base font-semibold">{item.description}</p>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Divider from "./common/Divider";
+import Divider from "../common/Divider";
 
 const footerLinks = [
   {
@@ -166,7 +166,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-brand-dark text-white py-100 px-4 xmd:px-106px flex flex-col gap-45px items-center">
+    <footer className="bg-brand-dark text-white py-100px px-4 xmd:px-106px flex flex-col gap-45px items-center">
       <div className="flex flex-col gap-13px justify-center items-center text-center w-full sm:w-456px">
         <h3 className="text-white text-2xl font-bold">
           Have questions? Our team is here to help. Call 631-400-8888
@@ -176,9 +176,9 @@ export default function Footer() {
         </p>
       </div>
       {/* Divider */}
-      <Divider className="!max-w-1228 bg-white mix-blend-overlay h-0.5 !rounded-8" />
+      <Divider className="!max-w-1228px bg-white mix-blend-overlay h-0.5 !rounded-8px" />
 
-      <div className="w-full max-w-1228 mx-auto lg:px-0">
+      <div className="w-full max-w-1228px mx-auto lg:px-0">
         <div className="flex w-full justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-8 lg:gap-0">
           {footerLinks.map((section) => (
             <div
@@ -214,7 +214,7 @@ export default function Footer() {
         </div>
       </div>
       {/* Divider */}
-      <Divider className="!max-w-1228 bg-white mix-blend-overlay h-0.5 !rounded-8" />
+      <Divider className="!max-w-1228px bg-white mix-blend-overlay h-0.5 !rounded-8px" />
 
       {/* Bottom section */}
       <div className="text-center text-12px font-extrabold uppercase leading-none ">

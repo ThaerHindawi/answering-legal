@@ -17,7 +17,7 @@ export default function RightSide() {
     <div className="flex items-center gap-4">
       {/* Search icon */}
       <div className="hidden lg:flex items-center gap-4">
-        <div className="flex items-center gap-2 h-44 my-1.5">
+        <div className="flex items-center gap-2 h-11 my-1.5">
           <button
             className="text-brand-dark cursor-pointer"
             onClick={() => setShowSearch((prev) => !prev)}
@@ -59,8 +59,8 @@ export default function RightSide() {
 
         <Link
           href="/"
-          className="bg-brand-primary text-22 text-neutral-white font-semibold  shrink-0
-      px-4 py-5 rounded-11 hover:bg-brand-dark transition-colors h-44 flex items-center justify-center"
+          className="bg-brand-primary text-22px text-neutral-white font-semibold  shrink-0
+      px-4 py-5 rounded-11px hover:bg-brand-dark transition-colors h-11 flex items-center justify-center"
         >
           Try for free
         </Link>
