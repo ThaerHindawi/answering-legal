@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-export default function RightSide() {
+type RightSideProps = {
+  onToggleMenu?: () => void;
+  isMenuOpen?: boolean;
+};
+
+export default function RightSide({ onToggleMenu, isMenuOpen }: RightSideProps) {
   const [showSearch, setShowSearch] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -66,7 +71,13 @@ export default function RightSide() {
         </Link>
       </div>
       {/* Mobile menu button */}
-      <button className="lg:hidden cursor-pointer">
+      <button
+        className="lg:hidden cursor-pointer"
+        onClick={onToggleMenu}
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={!!isMenuOpen}
+        aria-controls="mobile-menu"
+      >
         <svg
           width="59"
           height="48"

@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Answering Legal – Web App
 
-## Getting Started
+A modern marketing site for a legal answering service, built with Next.js App Router, Tailwind CSS v4, and React 19. The app includes a responsive header with mobile menu, animated navigation underline, carousels, and a validated contact form.
 
-First, run the development server:
+### Tech Stack
+- Next.js 15 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4 (utility-first styling, custom CSS variables in `src/app/globals.css`)
+- Swiper 12 (articles carousel)
+- React Hook Form + Zod + @hookform/resolvers (form state + schema validation)
+- class-variance-authority (Button variants)
 
+### Scripts
 ```bash
+# Run dev server (Turbopack)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build (Turbopack)
+npm run build
+
+# Start production server
+npm run start
+
+# Lint
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Project Structure
+```text
+src/
+  app/
+    (home-page)/
+      components/
+        Articles.tsx        # Swiper carousel + Read More toggle
+        ContactForm.tsx     # RHF + Zod validation + success state
+        DataSecurity.tsx
+        Hero.tsx
+        IntakeProcess.tsx
+        Services.tsx        # Responsive title splitting
+      page.tsx              # Landing page sections
+    pricing/
+      page.tsx              # Simple pricing grid
+    globals.css             # Tailwind layer + CSS variables
+    layout.tsx              # Root layout mounting shared Layout
+  components/
+    common/
+      Button.tsx           # CVA-based button variants
+      Divider.tsx
+    layout/
+      index.tsx            # Composes Header + Footer around pages
+      Footer.tsx           # Responsive, collapsible sections on <lg
+      header/
+        Header.tsx         # Manages mobile menu state
+        NavItems.tsx       # Center-out underline animation
+        RightSide.tsx      # Desktop search + mobile hamburger
+        MobileMenu.tsx     # Full-screen mobile menu overlay
+        Top.tsx
+        Logo.tsx
+        interfaces/
+          NavItem.ts       # Shared nav item type
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Notable Features
+- Header underline animates from center-out on active items.
+- Mobile menu overlay with backdrop, close controls, search, and CTA.
+- Footer categories collapse/expand on small screens; always open on large.
+- Articles carousel shows peeks on mobile, multiple cards on desktop.
+- Contact form validates required fields and email; shows success message.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Configuration
+- Redirects: configured in `next.config.ts` (e.g., `/landing-page` -> `/`).
+- Fonts: Google Montserrat loaded in `src/app/layout.tsx`.
 
-## Learn More
+### Development Notes
+- Components that use hooks or browser APIs are marked as client components via "use client".
+- Tailwind classes prefer semantic variables defined in `globals.css`.
+- Keep new UI consistent with existing spacing, radii, and color tokens.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Deployment
+Build with `npm run build` and start with `npm start`. Suitable for deployment on Vercel or any Node.js host that supports Next.js 15.

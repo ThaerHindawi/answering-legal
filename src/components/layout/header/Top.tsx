@@ -7,7 +7,9 @@ export default function Top() {
         Support
       </Link>
       <div className="text-xl text-brand-primary font-semibold">
-        <span>(631) 686-9700</span>
+        <Link href="tel:16316869700">
+          (631) 686-9700
+        </Link>
       </div>
     </div>
   );

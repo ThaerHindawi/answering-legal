@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Logo from "./Logo";
 import Top from "./Top";
 import RightSide from "./RightSide";
 import NavItems from "./NavItems";
+import MobileMenu from "./MobileMenu";
 
 const navItems = [
   { label: "Products", href: "/", dropdown: true },
@@ -11,6 +15,7 @@ const navItems = [
 ];
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 bg-neutral-bg h-16 lg:h-133px flex items-center">
       <div className="flex flex-col gap-4 max-w-1440px mx-auto px-4 py-2 lg:px-8 lg:pt-8 lg:pb-6 w-full">
@@ -22,7 +27,10 @@ export default function Header() {
           {/* Navigation */}
           <NavItems navItems={navItems} />
           {/* Right side */}
-          <RightSide />
+          <RightSide onToggleMenu={() => setIsMobileMenuOpen((prev) => !prev)} isMenuOpen={isMobileMenuOpen} />
+
+          {/* Mobile menu */}
+          <MobileMenu navItems={navItems} open={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
         </nav>
       </div>
     </header>

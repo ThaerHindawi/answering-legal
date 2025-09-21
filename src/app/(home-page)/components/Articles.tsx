@@ -8,6 +8,49 @@ import { Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+interface Article {
+  category: string;
+  date: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const articles: Article[] = [
+  {
+    category: "LAWYER WELLNESS",
+    date: "June 6, 2024",
+    title: "How Viable Is Remote Work For Lawyers?",
+    description:
+      "This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine during the COVID-19 pandemic, remote work has steadily been on the rise across all sectors of the economy, both private and public.",
+    image: "/Article_img_placeholder.jpg",
+  },
+  {
+    category: "LAWYER WELLNESS",
+    date: "June 6, 2024",
+    title: "How Viable Is Remote Work For Lawyers?",
+    description:
+      "This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine during the COVID-19 pandemic, remote work has steadily been on the rise across all sectors of the economy, both private and public.",
+    image: "/Article_img_placeholder.jpg",
+  },
+  {
+    category: "LAWYER WELLNESS",
+    date: "June 6, 2024",
+    title: "How Viable Is Remote Work For Lawyers?",
+    description:
+      "This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine during the COVID-19 pandemic, remote work has steadily been on the rise across all sectors of the economy, both private and public.",
+    image: "/Article_img_placeholder.jpg",
+  },
+  {
+    category: "LAWYER WELLNESS",
+    date: "June 6, 2024",
+    title: "How Viable Is Remote Work For Lawyers?",
+    description:
+      "This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine during the COVID-19 pandemic, remote work has steadily been on the rise across all sectors of the economy, both private and public.",
+    image: "/Article_img_placeholder.jpg",
+  },
+];
+
 export default function Articles() {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -32,41 +75,6 @@ export default function Articles() {
       swiper.navigation.update();
     }
   });
-
-  const articles = [
-    {
-      category: "LAWYER WELLNESS",
-      date: "June 6, 2024",
-      title: "How Viable Is Remote Work For Lawyers?",
-      description:
-        "This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine during the COVID-19 pandemic, remote work has steadily been on the rise across all sectors of the economy, both private and public.",
-      image: "/Article_img_placeholder.jpg",
-    },
-    {
-      category: "LAWYER WELLNESS",
-      date: "June 6, 2024",
-      title: "How Viable Is Remote Work For Lawyers?",
-      description:
-        "This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine during the COVID-19 pandemic, remote work has steadily been on the rise across all sectors of the economy, both private and public.",
-      image: "/Article_img_placeholder.jpg",
-    },
-    {
-      category: "LAWYER WELLNESS",
-      date: "June 6, 2024",
-      title: "How Viable Is Remote Work For Lawyers?",
-      description:
-        "This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine during the COVID-19 pandemic, remote work has steadily been on the rise across all sectors of the economy, both private and public.",
-      image: "/Article_img_placeholder.jpg",
-    },
-    {
-      category: "LAWYER WELLNESS",
-      date: "June 6, 2024",
-      title: "How Viable Is Remote Work For Lawyers?",
-      description:
-        "This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine during the COVID-19 pandemic, remote work has steadily been on the rise across all sectors of the economy, both private and public.",
-      image: "/Article_img_placeholder.jpg",
-    },
-  ];
 
   return (
     <section className="py-16">
@@ -131,9 +139,27 @@ export default function Articles() {
             loop={true}
             navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
             breakpoints={{
-              0: { slidesPerView: 1, centeredSlides: true, spaceBetween: 0, slidesOffsetBefore: 32, slidesOffsetAfter: 28 },
-              768: { slidesPerView: 2,centeredSlides: false, spaceBetween: 0, slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
-              1024: { slidesPerView: 3,centeredSlides: false, spaceBetween: 0, slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
+              0: {
+                slidesPerView: 1,
+                centeredSlides: true,
+                spaceBetween: 0,
+                slidesOffsetBefore: 32,
+                slidesOffsetAfter: 28,
+              },
+              768: {
+                slidesPerView: 2,
+                centeredSlides: false,
+                spaceBetween: 0,
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
+              },
+              1024: {
+                slidesPerView: 3,
+                centeredSlides: false,
+                spaceBetween: 0,
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
+              },
             }}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;

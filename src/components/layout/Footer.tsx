@@ -3,7 +3,18 @@
 import { useState } from "react";
 import Divider from "../common/Divider";
 
-const footerLinks = [
+interface FooterLink {
+  id: string;
+  title: string;
+  links: FooterLinkItem[];
+}
+
+interface FooterLinkItem {
+  title: string;
+  href: string;
+}
+
+const footerLinks: FooterLink[] = [
   {
     id: "our-service",
     title: "Our Service",
@@ -193,7 +204,9 @@ export default function Footer() {
                 aria-expanded={!!openSections[section.id]}
                 aria-controls={`footer-section-${section.id}`}
               >
-                <span className="w-full text-center lg:text-left">{section.title}</span>
+                <span className="w-full text-center lg:text-left">
+                  {section.title}
+                </span>
               </button>
               <ul
                 id={`footer-section-${section.id}`}

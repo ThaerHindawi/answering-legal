@@ -3,12 +3,8 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { NavItem } from "./interfaces/NavItem";
 
-interface NavItem {
-  label: string;
-  href: string;
-  dropdown: boolean;
-}
 
 interface NavItemsProps {
   navItems: NavItem[];
