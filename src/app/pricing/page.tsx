@@ -1,42 +1,4 @@
-import { Button } from "@/components/common/Button";
 import { Metadata } from "next";
-
-const plans = [
-  {
-    name: "Starter",
-    price: "$49/mo",
-    description: "Great for solo attorneys getting started.",
-    features: [
-      "24/7 call answering",
-      "Basic intake",
-      "Voicemail to email",
-    ],
-    cta: "Start Free Trial",
-  },
-  {
-    name: "Professional",
-    price: "$99/mo",
-    description: "Best for growing firms that need more support.",
-    features: [
-      "Everything in Starter",
-      "Advanced intake & scheduling",
-      "Bilingual receptionists",
-    ],
-    cta: "Choose Professional",
-    highlighted: true,
-  },
-  {
-    name: "Business",
-    price: "$199/mo",
-    description: "For established firms with higher call volume.",
-    features: [
-      "Everything in Professional",
-      "Dedicated account manager",
-      "CRM integrations",
-    ],
-    cta: "Contact Sales",
-  },
-];
 
 export const metadata: Metadata = {
     title: "Pricing - 24/7 Legal Answering Service - Specialized Law Firm Answering",

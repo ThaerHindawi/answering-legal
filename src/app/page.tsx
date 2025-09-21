@@ -1,11 +1,9 @@
-import Header from '@/components/header/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import DataSecurity from '@/components/DataSecurity';
 import IntakeProcess from '@/components/IntakeProcess';
 import Articles from '@/components/Articles';
 import ContactForm from '@/components/ContactForm';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
