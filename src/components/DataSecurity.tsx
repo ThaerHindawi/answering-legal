@@ -4,16 +4,17 @@ import { Button } from "./common/Button";
 
 export default function DataSecurity() {
   return (
-    <section className="py-16">
-      <div className="max-w-1100 mx-auto px-4 lg:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <section className="py-8 lg:py-16">
+      <div className="max-w-1100 mx-auto px-4 xl:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-center">
           {/* Left content - Image */}
           <div className="relative w-full h-full">
             <Image
               src="/CRM-Graphic.png"
               alt="Data Security"
-              fill
-              className="object-cover"
+              width={500}
+              height={500}
+              className="object-contain lg:object-cover min-h-300px"
             />
           </div>
 
@@ -96,7 +97,9 @@ export default function DataSecurity() {
 
             {/* CTA Button */}
             <div className="">
-              <Button variant="primary" size="lg" fullWidth={false}>See our pricing</Button>
+              <Button variant="primary" size="lg" fullWidth={false}>
+                See our pricing
+              </Button>
             </div>
           </div>
         </div>

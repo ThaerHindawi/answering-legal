@@ -46,14 +46,14 @@ export default function NavItems({ navItems }: NavItemsProps) {
   }
 
   return (
-    <div ref={containerRef} className="hidden md:flex gap-8">
+    <div ref={containerRef} className="hidden lg:flex gap-4 xl:gap-8 ">
       {navItems.map((item) => {
         const isActive = item.dropdown
           ? activeDropdown === item.label
           : pathname === item.href;
 
         return (
-          <div className="relative group flex flex-col gap-2" key={item.label}>
+          <div className="relative group flex flex-col gap-2 h-8" key={item.label}>
             {item.dropdown ? (
               <button
                 className={ClassName(isActive)}
@@ -81,7 +81,7 @@ export default function NavItems({ navItems }: NavItemsProps) {
               </Link>
             )}
             <div
-              className={`h-1 bg-accent-cyan rounded-8 w-full transform origin-center transition-transform duration-300 ${
+              className={`h-1 shrink-0 bg-accent-cyan rounded-8 w-full transform origin-center transition-transform duration-300 ${
                 isActive ? "scale-x-100" : "scale-x-0"
               }`}
             ></div>

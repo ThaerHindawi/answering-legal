@@ -1,15 +1,30 @@
+import Image from "next/image";
+import { Button } from "./common/Button";
+
 export default function Hero() {
   return (
-    <section
-      className="flex relative h-750 min-w-400 text-neutral-white py-16"
-      style={{
-        backgroundImage: "url('/landing-hero.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <section className="flex flex-col relative h-750 min-w-400 text-neutral-white py-16 bg-brand-dark">
+      {/* Background Image for desktop */}
+      <div className="hidden lg:block absolute inset-0">
+        <Image
+          src="/landing-hero.jpg"
+          alt="Hero"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* Background Image for mobile */}
+      <div className="lg:hidden w-full h-full">
+        <Image
+          src="/landing-hero-mobile.jpg"
+          alt="Hero"
+          fill
+          className="object-cover"
+        />
+      </div>
       {/* Content */}
-      <div className="relative max-w-1120 mx-4 lg:mx-auto">
+      <div className="relative max-w-1120 px-4 xl:px-0 lg:mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex flex-col gap-8 w-650">
             <h1 className="text-32 lg:text-5xl font-bold">
@@ -41,12 +56,9 @@ export default function Hero() {
               </div>
 
               {/* CTA Button */}
-              <button
-                className="bg-brand-primary hover:bg-brand-dark text-neutral-white text-xl
-             font-semibold py-3 px-8 rounded-12 transition-colors w-full"
-              >
+              <Button variant="primary" size="md" fullWidth={true}>
                 See our pricing
-              </button>
+              </Button>
             </div>
           </div>
         </div>

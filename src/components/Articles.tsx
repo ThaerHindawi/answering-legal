@@ -69,92 +69,15 @@ export default function Articles() {
 
   return (
     <section className="py-16">
-      <div className="max-w-1248 mx-auto px-4 lg:px-0 flex flex-col gap-8 items-center relative">
+      <div className="max-w-1248 mx-auto flex flex-col gap-8 lg:gap-32-5px items-center relative">
         {/* Section header */}
-        <div className="text-center">
-          <h2 className="text-32 font-bold leading-none">
+        <div className="text-center px-4 md:px-0">
+          <h2 className="text-32 font-bold text-brand-dark leading-none">
             Want to learn more? Read our articles on legal intake.
           </h2>
         </div>
 
-        {/* Articles carousel */}
-        <div className="relative z-10 w-full px-15 flex flex-col justify-center items-center">
-          <Swiper
-            className="w-full"
-            modules={[Navigation, A11y]}
-            // spaceBetween={24}
-            loop={true}
-            navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-            breakpoints={{
-              0: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            onBeforeInit={(swiper) => {
-              swiperRef.current = swiper;
-              const navigationParams = swiper.params.navigation as unknown as
-                | {
-                    prevEl?: Element | null;
-                    nextEl?: Element | null;
-                  }
-                | false
-                | undefined;
-              if (navigationParams && typeof navigationParams !== "boolean") {
-                navigationParams.prevEl = prevRef.current;
-                navigationParams.nextEl = nextRef.current;
-              }
-            }}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-          >
-            {articles.map((article, index) => (
-              <SwiperSlide key={index}>
-                <article className="relative bg-white rounded-20 shadow-custom-1 px-4 mx-3 pt-4 pb-23px flex flex-col gap-4 mb-8">
-                  <div className="aspect-video relative items-center justify-center">
-                    <div className="w-full h-full">
-                      <Image
-                        className="rounded-20"
-                        src={article.image}
-                        alt={article.title}
-                        fill
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-4">
-                    <div className="text-sm text-brand-primary font-semibold">
-                      {article.category}
-                    </div>
-                    <div className="flex gap-4.5 pe-15px ">
-                      <div className="shrink-0 w-0.5 bg-accent-cyan rounded-15px"></div>
-                      <div className="flex flex-col gap-3">
-                        <span className="text-neutral-gray text-base font-semibold capitalize leading-none">
-                          {article.date}
-                        </span>
-                        <h3 className="text-xl font-semibold leading-none">
-                          {article.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <p className="">{article.description}</p>
-                  </div>
-                </article>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Go to blog button */}
-          <Button
-            className="z-10"
-            variant="primary"
-            size="lg"
-            fullWidth={false}
-          >
-            Go to blog
-          </Button>
-        </div>
-
-        <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-between items-center pointer-events-none">
+        <div className="relative gap-16 lg:absolute lg:inset-0 flex justify-between items-center pointer-events-none">
           <button
             ref={prevRef}
             aria-label="Previous slide"
@@ -197,6 +120,82 @@ export default function Articles() {
               />
             </svg>
           </button>
+        </div>
+
+        {/* Articles carousel */}
+        <div className="relative z-10 w-full px-0 md:px-15 flex flex-col justify-center items-center">
+          <Swiper
+            className="w-full"
+            modules={[Navigation, A11y]}
+            loop={true}
+            navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+            breakpoints={{
+              0: { slidesPerView: 1, centeredSlides: true, spaceBetween: 0, slidesOffsetBefore: 32, slidesOffsetAfter: 28 },
+              768: { slidesPerView: 2,centeredSlides: false, spaceBetween: 0, slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
+              1024: { slidesPerView: 3,centeredSlides: false, spaceBetween: 0, slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
+            }}
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+              const navigationParams = swiper.params.navigation as unknown as
+                | {
+                    prevEl?: Element | null;
+                    nextEl?: Element | null;
+                  }
+                | false
+                | undefined;
+              if (navigationParams && typeof navigationParams !== "boolean") {
+                navigationParams.prevEl = prevRef.current;
+                navigationParams.nextEl = nextRef.current;
+              }
+            }}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+          >
+            {articles.map((article, index) => (
+              <SwiperSlide key={index}>
+                <article className="relative bg-white rounded-20 shadow-custom-1 px-4 pt-4 pb-23px flex flex-col gap-4 mx-3 mb-8 lg:mb-32-5px">
+                  <div className="aspect-video relative items-center justify-center">
+                    <div className="w-full h-full">
+                      <Image
+                        className="rounded-20"
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <div className="text-sm text-brand-primary font-semibold">
+                      {article.category}
+                    </div>
+                    <div className="flex gap-4.5 pe-15px ">
+                      <div className="shrink-0 w-0.5 bg-accent-cyan rounded-15px"></div>
+                      <div className="flex flex-col gap-3">
+                        <span className="text-neutral-gray text-base font-semibold capitalize leading-none">
+                          {article.date}
+                        </span>
+                        <h3 className="text-xl font-semibold leading-none">
+                          {article.title}
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="">{article.description}</p>
+                  </div>
+                </article>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Go to blog button */}
+          <Button
+            className="z-10"
+            variant="primary"
+            size="lg"
+            fullWidth={false}
+          >
+            Go to blog
+          </Button>
         </div>
       </div>
     </section>

@@ -4,11 +4,11 @@ import Divider from "./common/Divider";
 
 export default function IntakeProcess() {
   return (
-    <section className="py-16">
-      <div className="max-w-1100 mx-auto px-4 lg:px-0">
+    <section className="py-8 lg:py-16">
+      <div className="max-w-1100 mx-auto px-8 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left content */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 order-2 lg:order-1">
             <div className="flex flex-col gap-6">
               <h2 className="text-32 font-bold leading-none">
                 Design your perfect legal intake process
@@ -28,7 +28,7 @@ export default function IntakeProcess() {
           </div>
 
           {/* Right content - Image with checkmarks */}
-          <div className="relative">
+          <div className="relative order-1 lg:order-2">
             <Image
               src="/Receptionist_IMG.png"
               alt="Intake Process"

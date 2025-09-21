@@ -35,6 +35,7 @@
   --spacing-17.5: 17.5px;
   --spacing-23px: 23px;
   --spacing-27px: 27px;
+  --spacing-32-5px: 32.5px;
   --spacing-44: 44px;
   --spacing-45px: 45px;
   --spacing-47: 47px;
@@ -58,7 +59,10 @@
   --spacing-92: 92px;
   --spacing-100: 100px;
   --spacing-106px: 106px;
+  --spacing-153px: 153px;
+  --spacing-193px: 193px;
   --spacing-174: 174px;
+  --spacing-300px: 300px;
   --spacing-340: 340px;
   --spacing-370: 370px;
 
@@ -91,6 +95,10 @@
   --leading-12: 120%;
   --leading-245%: 245%;
   --leading-32: 32px;
+
+  --breakpoint-xxs: 23rem;
+  --breakpoint-xs: 30rem;
+  --breakpoint-xmd: 56.25rem;
   ; 
 }
 

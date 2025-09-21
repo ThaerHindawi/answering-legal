@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Divider from "./common/Divider";
 
 const footerLinks = [
@@ -156,9 +159,15 @@ const footerLinks = [
 ];
 
 export default function Footer() {
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+
+  function toggleSection(id: string) {
+    setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }));
+  }
+
   return (
-    <footer className="bg-brand-dark text-white py-100 sm:px-106px flex flex-col gap-45px items-center">
-      <div className="flex flex-col gap-13px justify-center items-center text-center w-456px">
+    <footer className="bg-brand-dark text-white py-100 px-4 xmd:px-106px flex flex-col gap-45px items-center">
+      <div className="flex flex-col gap-13px justify-center items-center text-center w-full sm:w-456px">
         <h3 className="text-white text-2xl font-bold">
           Have questions? Our team is here to help. Call 631-400-8888
         </h3>
@@ -169,13 +178,24 @@ export default function Footer() {
       {/* Divider */}
       <Divider className="!max-w-1228 bg-white mix-blend-overlay h-0.5 !rounded-8" />
 
-      <div className="w-full max-w-1228 mx-auto px-4 lg:px-0">
-        <div className="flex w-full justify-between">
-          {footerLinks.map((link) => (
-            <div key={link.id} className="flex flex-col gap-5px">
-              <h4 className="text-2xl font-semibold">{link.title}</h4>
-              <ul className="text-sm leading-245%">
-                {link.links.map((link) => (
+      <div className="w-full max-w-1228 mx-auto lg:px-0">
+        <div className="flex w-full justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-8 lg:gap-0">
+          {footerLinks.map((section) => (
+            <div key={section.id} className="flex flex-col gap-5px w-[40%] xxs:w-[45%] sm:w-[30%] items-start lg:w-auto">
+              <button
+                type="button"
+                className="text-base xxs:text-2xl font-semibold w-full flex items-center justify-between lg:justify-start cursor-pointer"
+                onClick={() => toggleSection(section.id)}
+                aria-expanded={!!openSections[section.id]}
+                aria-controls={`footer-section-${section.id}`}
+              >
+                <span>{section.title}</span>
+              </button>
+              <ul
+                id={`footer-section-${section.id}`}
+                className={`text-sm leading-245% ${openSections[section.id] ? "block" : "hidden"} lg:block`}
+              >
+                {section.links.map((link) => (
                   <li key={link.href}>
                     <a href={link.href} className="">
                       {link.title}

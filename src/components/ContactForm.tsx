@@ -7,7 +7,7 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div className="text-neutral-white flex flex-col gap-8">
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-32 leading-none lg:text-5xl font-bold">
               24/7 coverage at a fraction of the cost of in-house receptionists.
             </h1>
             <p className="text-2xl font-semibold leading-none">
@@ -116,7 +116,7 @@ export default function ContactForm() {
               <Button
                 variant="primary"
                 size="lg"
-                className="rounded-12 p-4 h-49px w-fit self-center"
+                className="rounded-12 !p-4 h-49px w-fit self-center"
                 fullWidth={false}
               >
                 See plans & pricing

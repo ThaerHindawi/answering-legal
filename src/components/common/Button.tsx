@@ -17,7 +17,7 @@ const buttonVariants = cva(
       },
       size: {
         sm: "px-3 py-2 text-sm",
-        md: "px-6 py-3 text-base",
+        md: "px-6 py-17.5 text-xl",
         lg: "px-6 py-17.5 text-2xl",
       },
       fullWidth: {
