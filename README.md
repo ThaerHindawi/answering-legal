@@ -69,13 +69,15 @@ src/
 - Contact form validates required fields and email; shows success message.
 
 ### Configuration
-- Redirects: configured in `next.config.ts` (e.g., `/landing-page` -> `/`).
 - Fonts: Google Montserrat loaded in `src/app/layout.tsx`.
 
 ### Development Notes
 - Components that use hooks or browser APIs are marked as client components via "use client".
 - Tailwind classes prefer semantic variables defined in `globals.css`.
 - Keep new UI consistent with existing spacing, radii, and color tokens.
+
+### Tested
+I tested the Web application on Google Chrome, Firefox, Safari, and Opera.
 
 ### Deployment
 Build with `npm run build` and start with `npm start`. Suitable for deployment on Vercel or any Node.js host that supports Next.js 15.
